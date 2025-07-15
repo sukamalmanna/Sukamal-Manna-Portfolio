@@ -3,85 +3,62 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sukamal Manna Portfolio</title>
-    <link rel="stylesheet" href="Style/style.css">
-    <link rel="shortcut icon" href="/Image/Manna_fav.png" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/a58aa1e9ea.js" crossorigin="anonymous"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
-    <script>
-        $(function () {
-            $("#header").load("/pages/header.html");
-            $("#footer").load("/pages/footer.html");
-            $("#social_share").load("/pages/social_share.html");
-        })
-    </script>
-
+    <title>Animated Portfolio Website</title>
+    <link rel="stylesheet" href="./CSS/style.css">
 </head>
 
 <body>
-    <!-- ------------loading Header---------- -->
-    <div id="header"></div>
-
-    <div class="continer">
-        <div class="subcontainer">
-            <div class="content">
-                <h3>Hey_</h3>
-                <h2>I am <br> <span id="text"></span></h2>
-                <p>Result-driven and detail-oriented individual with strong communication skills. I aim to leverage my
-                    lead generation and sales skills while expanding my knowledge. </p>
-                <a href="https://www.linkedin.com/in/imsukamalmanna" target="_blank"><button>Hire Me</button>
-                </a>
-                <a href="https://www.linkedin.com/in/imsukamalmanna" target="_blank">
-                    <button class="chat">
-                        <i class="fa-regular fa-comments"><span></span></i>Let's Chat</button>
-                </a>
-            </div>
-            <img src="https://lh3.googleusercontent.com/d/1XGEugkMGNZLtkQL9tg2Geno81gkofMgv" alt="">
-
+    <section class="banner">
+        <header>
+            <a href="#" class="logo"><span>My</span>Portfolio_</a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <h3>Hey_</h3>
+            <h2>I am <span id="text"></span></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, commodi. Lorem ipsum dolor sit amet.</p>
+            <button>Hire Me</button>
+            <button class="chat"><ion-icon name="chatbubbles-outline"></ion-icon>Let's Chat</button>
         </div>
-        <div class="subcontainer">
+        <img src="./images/colors.png" class="colors" alt="">
+        <img src="./images/men.png" class="man" alt="">
 
-            <img src="https://lh3.googleusercontent.com/d/1hIwLWtThRuEg3JteynS_2F70NK_nDTjF" alt="">
-            <div class="content">
-                <h3>This is  my social media accounts</h3>
-                <h2 class="name1">SUKAMAL MANNA</h2>
-                
-                <!-- ----------loading social icons---------- -->
-                <div class="socialIconShare" id="social_share"></div>
-            </div>
-            
+        <ul class="sci">
+            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-skype"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        </ul>
+        <div class="dayNight">
+            <ion-icon name="moon-outline"></ion-icon>
+            <ion-icon name="sunny-outline"></ion-icon>
+        </div>
+    </section>
 
-
-        <!-- ----------loading social icons---------- -->
-        <!-- <div class="socialIconShare" id="social_share"></div> -->
-
-
-        <!-- ---- Main Continer ----- -->
-    </div>
-
-
-
-    <!-- --------------loading Footer------------------- -->
-
-    <div id="footer"></div>
-
-
-    <!-- --------loading Text for Intro-------- -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
 
     <script>
-        let typingText = new Typed("#text", {
-            strings: ["SUKAMAL", "MANNA", "MBA", "MARKETING", "Designer", "Youtuber"],
-            loop: true,
-            typeSpeed: 50,
+        let typingText = new Typed("#text",{
+            strings : ["MANNA","Designer","Coder","Web Developer","Youtuber"],
+            loop : true,
+            typeSpeed : 50,
         })
 
-
+        let banner = document.querySelector('.banner');
+        let dayNight = document.querySelector('.dayNight');
+        dayNight.onclick = function(){
+            banner.classList.toggle('night')
+        }
     </script>
-
 </body>
 
 </html>
