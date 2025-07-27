@@ -1,28 +1,22 @@
  /* ----------Header Design---------- */
 
- body header {
-     /* position: fixed; */
-     background: #f6fa03;
-     border-bottom: #fddb01;
-     height: auto;
-     
- }
+ 
 
- .shadowHeader {
+ body header .shadowHeader {
      height: 50%;
-     background-color: #f6fa03;
+     /* background-color: #f6fa03; */
  }
 
- .shadowHeader a {
+ body header .shadowHeader a {
      text-decoration: none;
      color: #000;
  }
 
- .shadowHeader a:hover {
+ body header .shadowHeader a:hover {
      color: #e91e63;
  }
 
- body .logoName {
+ body header .shadowHeader a .logoName {
      position: fixed;
      background: #fff;
      border: 2px solid #e91e63;
@@ -36,7 +30,7 @@
      z-index: 30;
  }
 
- body ul {
+ body header .shadowHeader .header_ul {
      position: fixed;
      background: #fff;
      border: 2px solid #e91e63;
@@ -49,31 +43,31 @@
      z-index: 30;
  }
 
- body ul li {
+ body header .shadowHeader .header_ul .header_ul_li {
      list-style: none;
      align-items: center;
      display: block;
      border-right: 1px solid rgba(0, 0, 0, 0.2);
  }
 
- body ul li:last-child {
+ body header .shadowHeader .header_ul .header_ul_li:last-child {
      border-right: none;
  }
 
- body ul li a {
+ body header .shadowHeader .header_ul .header_ul_li a {
      text-decoration: none;
      padding: 0 50px;
      display: flex;
  }
 
- body ul li a .icon {
+ body header .shadowHeader .header_ul .header_ul_li a .icon {
      width: 55px;
      height: 44px;
      text-align: center;
      overflow: hidden;
  }
 
- body ul li a .icon .fa-solid {
+ body header .shadowHeader .header_ul .header_ul_li a .icon .fa-solid {
      width: 100%;
      height: 100%;
      line-height: 40px;
@@ -82,15 +76,15 @@
      color: #000;
  }
 
- body ul li a:hover .icon .fa-solid {
+ body header .shadowHeader .header_ul .header_ul_li a:hover .icon .fa-solid {
      transform: translateY(-100%);
  }
 
- body ul li a:hover .icon .fa-solid:last-child {
+ body header .shadowHeader .header_ul .header_ul_li a:hover .icon .fa-solid:last-child {
      color: #e91e63;
  }
 
- body ul li a .name {
+ body header .shadowHeader .header_ul .header_ul_li a .name {
      position: relative;
      height: 20px;
      width: 100%;
@@ -100,7 +94,7 @@
      left: 5px;
  }
 
- body ul li a .name span {
+ body header .shadowHeader .header_ul .header_ul_li a .name span {
      display: block;
      position: relative;
      color: #000;
@@ -109,7 +103,7 @@
      transition: 0.5s;
  }
 
- body ul li a .name span::before {
+ body header .shadowHeader .header_ul .header_ul_li a .name span::before {
      content: attr(data-text);
      position: absolute;
      top: -100%;
@@ -119,13 +113,13 @@
      color: #e91e63;
  }
 
- body ul li a:hover .name span {
+ body header .shadowHeader .header_ul .header_ul_li a:hover .name span {
      transform: translateY(20px);
  }
 
- body .menuToggle {
+ body header .shadowHeader .menuToggle {
      position: fixed;
-     z-index: 100000;
+     z-index: 15;
      right: 20px;
      top: 6px;
      background: #fff;
@@ -139,18 +133,18 @@
  /* -------------- Screen Size ------------------- */
 
  @media (max-width:992px) {
-     body .logoName {
+     body header .shadowHeader a .logoName {
          border: 1.5px solid #e91e63;
          top: 5px;
          left: 10px;
      }
 
-     body .menuToggle {
+     body header .shadowHeader .menuToggle {
          display: block;
          border: 1.5px solid #e91e63;
      }
 
-     body ul {
+     body header .shadowHeader .header_ul {
          display: block;
          padding: 0;
          width: 90%;
@@ -163,19 +157,19 @@
 
      }
 
-     body ul.active {
+     body header .shadowHeader .header_ul.active {
          transform: scaleY(1);
      }
 
-     body ul li {
+     body header .shadowHeader .header_ul .header_ul_li {
          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
      }
 
-     body ul li:last-child {
+     body header .shadowHeader .header_ul .header_ul_li:last-child {
          border-bottom: none;
      }
 
-     body ul li a {
+     body header .shadowHeader .header_ul .header_ul_li a {
          padding: 0 25px;
      }
  }

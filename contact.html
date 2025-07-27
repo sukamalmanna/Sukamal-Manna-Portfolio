@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Sukamal Manna</title>
+    <title>Contact Me - Sukamal Manna</title>
     <link rel="shortcut icon" href="Manna_fav.png" type="image/x-icon">
-    <link rel="stylesheet" href="contact.css">
 
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/a58aa1e9ea.js" crossorigin="anonymous"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
 
     <script>
         $(function () {
@@ -20,38 +23,193 @@
         })
     </script>
 
+
+
+    <style>
+        body {
+            background-color: #fff0f8f9;
+            /* background-image: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%); */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .input-field:focus {
+            box-shadow: 0 0 0 3px rgba(246, 59, 162, 0.3);
+        }
+
+        .send-button {
+            transition: all 0.3s ease;
+        }
+
+        .send-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(235, 37, 133, 0.25);
+        }
+    </style>
 </head>
 
-<body>
+<body class="flex items-center justify-center p-4">
 
     <!-- ------------loading Header---------- -->
     <div id="header"></div>
 
-    <div class="continer">
-        <div class="subcontainer">
-            <h1>i am contact</h1>
-            <h3>i am cooming soon</h3>
+    <div class="form-container w-full max-w-lg bg-white rounded-xl shadow-lg overflow-hidden my-12">
+        <!-- Form Header -->
+        <div class="bg-gradient-to-r from-pink-600 to-pink-700 p-8 text-white">
+            <h1 class="text-3xl font-bold">Get in Touch</h1>
+            <p class="mt-2 opacity-90">Send me a message directly to my email</p>
         </div>
-        
-        
-        
 
+        <!-- Form Body -->
+        <div class="p-8">
+            <form id="contactForm" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="input-field w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500 transition-colors">
+                </div>
 
-        <!-- ---- Main Continer ----- -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                    <input type="email" id="email" name="email" required
+                        class="input-field w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500 transition-colors">
+                </div>
+
+                <div>
+                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                    <input type="text" id="subject" name="subject" required
+                        class="input-field w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500 transition-colors">
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                        class="input-field w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-pink-500 transition-colors resize-none"></textarea>
+                </div>
+
+                <button type="submit" id="sendButton"
+                    class="send-button w-full bg-pink-600 hover:bg-pink-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                    Send Message
+                </button>
+            </form>
+
+            <div class="mt-6 text-center text-sm text-gray-500">
+                <p>This form will open your default email client with your message pre-filled.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- --------------loading Footer------------------- -->
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-md mx-4 shadow-xl">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-6">
+                    <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-medium text-gray-900 mb-3">Email Client Opened!</h3>
+                <p class="text-gray-600 mb-6">Your message has been prepared in your email client. Please review and
+                    send it from there.</p>
+                <button id="closeModal"
+                    class="w-full inline-flex justify-center px-6 py-3 bg-pink-600 text-white font-medium rounded-lg hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
 
-    <div id="footer"></div>
+    <!-- Error Modal -->
+    <div id="errorModal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-md mx-4 shadow-xl">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-100 mb-6">
+                    <svg class="h-8 w-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-medium text-gray-900 mb-3">Unable to Open Email Client</h3>
+                <p class="text-gray-600 mb-6">Your browser couldn't open your email client. Please send an email
+                    manually to: <strong>imsukamalmanna@gmail.com</strong></p>
+                <button id="closeErrorModal"
+                    class="w-full inline-flex justify-center px-6 py-3 bg-pink-600 text-white font-medium rounded-lg hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500">
+                    Close
+                </button>
+                <div class="mt-4">
+                    <a href="mailto:imsukamalmanna@gmail.com" class="text-pink-600 hover:text-pink-800 underline">Try
+                        opening email client again</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
-        $(function () {
-            
-            $("#footer").load("/pages/footer.html");
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-        })
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Form validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            // Create mailto link with form data
+            const mailtoLink = `mailto:imsukamalmanna@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} <${email}>\n\n${message}`)}`;
+
+            // Try to open the email client
+            const mailtoWindow = window.open(mailtoLink, '_blank');
+
+            // Check if the window was blocked or not supported
+            setTimeout(function () {
+                try {
+                    if (!mailtoWindow || mailtoWindow.closed || typeof mailtoWindow.closed === 'undefined') {
+                        document.getElementById('errorModal').classList.remove('hidden');
+                    } else {
+                        document.getElementById('successModal').classList.remove('hidden');
+                    }
+                } catch (e) {
+                    document.getElementById('errorModal').classList.remove('hidden');
+                }
+            }, 500);
+        });
+
+        document.getElementById('closeModal').addEventListener('click', function () {
+            document.getElementById('successModal').classList.add('hidden');
+        });
+
+        document.getElementById('closeErrorModal').addEventListener('click', function () {
+            document.getElementById('errorModal').classList.add('hidden');
+        });
     </script>
-
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'965b9e21437c94d0',t:'MTc1MzYxMzg2NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 
 </html>

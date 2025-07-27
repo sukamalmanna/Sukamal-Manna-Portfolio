@@ -1,28 +1,340 @@
 
+:root {
+    /* Background_primary_colour */
+    --primary: #e91e63;
+    --primary_2: #e84c80;
+
+    /* trasaparent_background */
+    --secondary: #ffffffdb;
+    --white: #fff;
+    --hover_color: #ffffffbc;
+    --black_mid: #333;
+    --black:#000000;
+    --progressBar_shadow:#e91e6210;
+    
+
+
+    --btn1: #ff1867;
+    --btn2: #1e9bff;
+    --btn3:#6eff3e;
+    --quiz_background_color:linear-gradient(to bottom right, #f84983, #e480a1, #f84983);
+}
+
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
-    background: #e91e63;
-}
-body .continer {
-    position: relative;
-    top: 65px;
-    color: #fff;
-    /* z-index: -30; */
-    z-index: 0;
-    margin: 0 2px;
-    /* padding: 0 10px; */
+    background: var(--primary_2);
+    
 }
 
-.subcontainer {
-    background: #ffffffdb;
-    margin: 2px;
-    padding: 2px;
+body .about_container {
+    
+    /* max-width: 100%; */
+    max-width: 70%;
+    background: var(--white);
+    margin: 80px auto 20px auto;
+    padding: 20px 0px;
     border-radius: 4px;
+
+
+}
+
+body .about_container .about_container_1 {
+    max-width: 90%;
+    /* max-width: 900px; */
+    margin: 10px auto;
+}
+
+body .about_container .about_container_1 .about_container_1_1 {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+
+}
+
+
+body .about_container .about_container_1 img.logo_profile {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+
+
+}
+
+body .about_container .about_container_1 .about_container_1_1 div h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+body .about_container .about_container_1 .about_container_1_1 div .logo_connect {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+body .about_container .about_container_1 .about_container_1_1 div .social_logos_about {
+    width: 30px;
+}
+
+body .about_container .about_container_1 .about_container_1_1 div p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--black_mid);
+    /* padding-left: 10px; */
+}
+
+body .about_container .about_container_1 .about_container_1_1 div .all_links {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+body .about_container .about_container_1 .about_container_1_1 div .all_links .social1 {
+    padding-right: 10px;
+    width: 40px;
+    margin: 10px 5px;
+}
+
+body .about_container .about_container_1 h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    border: 2px solid var(--primary);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 4px;
+    padding: 3px 5px;
+}
+
+body .about_container .about_container_1 p {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: justify;
+    margin: 5px 10px;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils {
+    display: flex;
+    /* margin: 10px auto; */
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div {
+    /* margin-right: 50px; */
+    padding-right: 10px;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-left: 100px;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div .soft_skills .soft_skills_list,
+body .about_container .about_container_1 .about_container_1_1 .skils div .technical_skills .technical_skills_list {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px auto;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div .soft_skills .soft_skills_list ul,
+body .about_container .about_container_1 .about_container_1_1 .skils div .technical_skills .technical_skills_list ul {
+    margin: auto 50px;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div .soft_skills .soft_skills_list ul li,
+body .about_container .about_container_1 .about_container_1_1 .skils div .technical_skills .technical_skills_list ul li {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div .progress-container {
+    width: 130px;
+    height: 15px;
+    /* background-color: #e6f2e1; */
+    background-color: var(--clr_shadow);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div .progress-bar {
+    /* background-color: #4a7c2f; */
+    /* background-color: var(--primary); */
+    background-color: var(--clr);
+    border-radius: 5px 0 0 5px;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div .progress-bar.Communication {
+    width: 80%;
+    height: 100%;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div .progress-bar.Leadership {
+    width: 65%;
+    height: 100%;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div .progress-bar.Time_management {
+    width: 80%;
+    height: 100%;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div .progress-bar.Problem_Solving {
+    width: 75%;
+    height: 100%;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div .progress-bar.Team_Work {
+    width: 86%;
+    height: 100%;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div .progress-bar.MS_Office {
+    width: 90%;
+    height: 100%;
+}
+
+body .about_container .about_container_1 .about_container_1_1 .skils div .progress-bar.Social_Media_Marketing {
+    width: 70%;
+    height: 100%;
+}
+
+body .about_container .about_container_1 .about_container_1_1 table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+
+}
+
+body .about_container .about_container_1 .about_container_1_1 table th,
+body .about_container .about_container_1 .about_container_1_1 table td {
+    border: 2px solid var(--primary);
+    padding: 10px;
+}
+
+body .about_container .about_container_1 .about_container_1_1 table th {
+    /* background-color: #f4fff4; */
+    background-color: var(--progressBar_shadow);
+    font-weight: bold;
+
+}
+body .about_container .about_container_1 .about_container_1_1.Certification{
+    /* display: flex; */
+    /* align-items: start; */
+    justify-content: start;
+}
+body .about_container .about_container_1 .about_container_1_1 ul{
+    margin: 10px 25px;
+}
+body .about_container .about_container_1 .about_container_1_1 ul li {
+    align-items: start;
+    justify-content: left;
+    margin-left: 20px;
+    padding-bottom: 5px;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+
+body .about_container .about_container_1 .about_container_1_1 h4 {
+    font-size: 1rem;
+    margin: 5px;
+    /* text-align: center; */
+}
+
+body .about_container .about_container_1 h2.Declaration {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px;
+}
+
+body .about_container .about_container_1 h2.Declaration span {
+    text-transform: none;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: justify;
+}
+
+@media(max-width:992px) {
+    body .about_container{
+    max-width: 95%;
+        margin: 60px auto 20px auto;
+    }
+    body .about_container .about_container_1 .about_container_1_1 {
+        display: block;
+
+
+    }
+
+    body .about_container .about_container_1 img.logo_profile {
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    body .about_container .about_container_1 .about_container_1_1 h1 {
+        font-size: 2rem;
+    }
+
+    body .about_container .about_container_1 h2 {
+        font-size: 1.5rem;
+    }
+
+    body .about_container .about_container_1 .about_container_1_1 .skils {
+        display: block;
+        margin-left: -56px;
+        
+
+    }
+   
+
+    body .about_container .about_container_1 .about_container_1_1 .skils div h3 {
+        text-align: center;
+        margin-left: 80px;
+        margin-top: 10px;
+    }
+    
+   
+
+    body .about_container .about_container_1 .about_container_1_1 .skils div .soft_skills .soft_skills_list,
+    body .about_container .about_container_1 .about_container_1_1 .skils div .technical_skills .technical_skills_list {
+        display: block;
+
+    }
+
+    .soft_skills .soft_skills_list ul,
+    .technical_skills .technical_skills_list ul {
+        margin: 10px 20px;
+    }
+
+    body .about_container .about_container_1 .about_container_1_1 .skils div .progress-container {
+        width: 290px;
+        margin-left: 80px;
+    }
+
+    body .about_container .about_container_1 .about_container_1_1 table {
+        font-size: .8rem;
+    }
+
+    body .about_container .about_container_1 .about_container_1_1 table th,
+body .about_container .about_container_1 .about_container_1_1 table td {
+        padding: 5px;
+    }
+
+body .about_container .about_container_1 .about_container_1_1 {
+    margin-left: auto;
+}
+
+
 }
